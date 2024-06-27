@@ -15,22 +15,22 @@ def read_pattern(filepath):
     with open(filepath, "r") as file:
         return file.read()
 
+filepath = '/Users/justin/Desktop/UQ/y2s1/comp2048/lab02/110p62.cells'
 
 N = 64
+padding = 5
+
 
 # create the game of life object
 life = conway.GameOfLife(N)
-# life.insertBlinker((0,0))
-# life.insertGlider((0,0))
-life.insertGliderGun((0,0))
-cells = life.getStates()  # initial state
-
-# -------------------------------
-filepath = r'C:\Users\Justin\Downloads\66p13.cells'
-
-# reads the pattern
+#life.insertBlinker((0,0))
+#life.insertGlider((0,0))
+#life.insertGliderGun((0,0))
 pattern = read_pattern(filepath)
-life.insertFromPlainText(pattern)
+life.insertFromPlainText(pattern, padding)
+cells = life.getStates()
+
+
 
 # plot cells
 fig = plt.figure()

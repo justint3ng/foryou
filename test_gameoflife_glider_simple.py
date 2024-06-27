@@ -12,8 +12,8 @@ import conway
 N = 64
 
 #create the game of life object
-life = conway.GameOfLife(N)
-life.insertBlinker((0,0))
+life = conway.GameOfLife(N, fastMode = False)
+#life.insertBlinker((0,0))
 life.insertGlider((0,0))
 cells = life.getStates() #initial state
 

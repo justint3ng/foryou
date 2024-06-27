@@ -8,16 +8,16 @@ Created on Tue Jan 15 12:37:52 2019
 """
 import conway
 
-padding = 10
-N = 50
+padding = 5
+N = 1750
 
 #read RLE file
 #~ with open("gosperglidergun.rle", "r") as text_file:
-with open("57p192.rle", "r") as text_file:
+with open("turingmachine.rle", "r") as text_file:
         rleString = text_file.read()
 
 #create the game of life object
-life = conway.GameOfLife(N, fastMode=True)  # fastMode = False (1 min 26 seconds)
+life = conway.GameOfLife(N, fastMode=True)  # fastMode = False (27 seconds)
 life.insertFromRLE(rleString, padding)
 cells = life.getStates() #initial state
 
